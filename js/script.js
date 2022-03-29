@@ -4,6 +4,19 @@ $(function(){
 	var sect = $( window.location.hash ),
 		portfolio = $('.portfolio-items');
 	
+
+	// Typed Initiate
+    if ($('.top-header em').length == 1) {
+        var typed_strings = $('.top-header p').text();
+        var typed = new Typed('.top-header em', {
+            strings: typed_strings.split(', '),
+            typeSpeed: 100,
+            backSpeed: 20,
+            smartBackspace: false,
+            loop: true
+        });
+    }
+
 	if(sect.length == 1){
 		$('.section.active').removeClass('active');
 		sect.addClass('active');
@@ -11,6 +24,9 @@ $(function(){
 			$('body').addClass('border-dark');
 		}
 	}
+
+
+	
 	
 	/*=========================================================================
 		Magnific Popup (Project Popup initialization)
